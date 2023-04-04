@@ -1,5 +1,10 @@
 module.exports = {
   getIndex: (req, res) => {
-    res.render("index.ejs");
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = today.toLocaleDateString('en-US', options);
+    const greeting = `Today is ${dateString}`;
+    const moods = ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Other']
+    res.render("entry.ejs", { greeting, moods });
   },
 };

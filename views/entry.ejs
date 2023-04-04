@@ -2,7 +2,7 @@
     <div class="container">
         <header>
             <h1>Welcome to Gratitude Journal</h1>
-            <p>Today is <%= today %></p>
+            <p><%= greeting %></p>
         </header>
 
         <nav>
@@ -24,7 +24,7 @@
                 <label for="mood">How are you feeling today?</label>
                 <div>
                 <% moods.forEach((mood) => { %>
-                    <label><input type="checkbox" name="mood" value="<%= mood %>"> <%= mood %></label>
+                    <label><input type="radio" name="mood" value="<%= mood %>"> <%= mood %></label>
                 <% }); %>
                 </div>
 
