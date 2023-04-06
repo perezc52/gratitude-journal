@@ -5,6 +5,6 @@ module.exports = {
     const dateString = today.toLocaleDateString('en-US', options);
     const greeting = `Today is ${dateString}`;
     const moods = ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Other']
-    res.render("entry.ejs", { greeting, moods });
+    res.render("index.ejs", { greeting, moods });
   },
 };
