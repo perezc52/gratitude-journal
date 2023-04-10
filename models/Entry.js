@@ -16,8 +16,8 @@ const journalEntrySchema = new mongoose.Schema({
   },
   mood: {
     type: [String],
-    enum: ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Other'],
-    default: ['Other']
+    enum: ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Angry'],
+    default: ['Happy']
   },
   madeYouSmile: {
     type: String,

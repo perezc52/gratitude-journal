@@ -1,10 +1,13 @@
 const Joi = require('joi');
 
 const entrySchema = Joi.object({
-  title: Joi.string().required(),
-  content: Joi.string().required(),
-  mood: Joi.string().valid('happy', 'sad', 'neutral'),
-  date: Joi.date().required(),
+  goodThing: Joi.string(),
+  positiveAccomplishment: Joi.string(),
+  mood: Joi.string().valid('Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Angry'),
+  madeYouSmile: Joi.string(),
+  lookingForwardTo: Joi.string(),
+  proudOfYourself: Joi.string(),
+  thoughtsReflections: Joi.string(),
 });
 
 module.exports = entrySchema;
