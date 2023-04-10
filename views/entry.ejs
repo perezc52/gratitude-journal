@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
     <div class="container">
-        <header class="text-center m-5">
+        <header class="text-center">
             <h1>Welcome to Gratitude Journal</h1>
             <p><%= greeting %></p>
         </header>
@@ -15,39 +15,46 @@
         <main>
             <h2>Today's Gratitude Journal Entry</h2>
             <form class="page p-5" action="/entry" method="POST">
-                <label for="goodThing">What's one good thing that happened today?</label>
-                <textarea id="goodThing" name="goodThing" required></textarea>
-                <div class="invalid-feedback">Please enter a valid email address.</div>
-
-                <label for="positiveAccomplishment">What's one positive accomplishment you made today?</label>
-                <textarea id="positiveAccomplishment" name="positiveAccomplishment" required></textarea>
-                <div class="invalid-feedback">Please enter a valid email address.</div>
-
-                <label for="mood">How are you feeling today?</label>
-                <div>
-                <% moods.forEach((mood) => { %>
-                    <label><input type="radio" name="mood" value="<%= mood %>"> <%= mood %></label>
-                <% }); %>
+                <div class="form-section">
+                    <label for="goodThing">What's one good thing that happened today?</label>
+                    <textarea id="goodThing" name="goodThing" required></textarea>
                 </div>
-                <div class="invalid-feedback">Please enter a valid email address.</div>
 
-                <label for="madeYouSmile">What made you smile today?</label>
-                <textarea id="madeYouSmile" name="madeYouSmile" required></textarea>
-                <div class="invalid-feedback">Please enter a valid email address.</div>
+                <div class="form-section">
+                    <label for="positiveAccomplishment">What's one positive accomplishment you made today?</label>
+                    <textarea id="positiveAccomplishment" name="positiveAccomplishment" required></textarea>
+                </div>
 
-                <label for="lookingForwardTo">What are you looking forward to?</label>
-                <textarea id="lookingForwardTo" name="lookingForwardTo" required></textarea>
-                <div class="invalid-feedback">Please enter a valid email address.</div>
+                <div class="form-section">
+                    <label for="mood">How are you feeling today?</label>
+                    <div class="grid-container">
+                    <% moods.forEach((mood) => { %>
+                        <label><input type="radio" name="mood" value="<%= mood %>"> <%= mood %></label>
+                    <% }); %>
+                    </div>
+                </div>
 
-                <label for="proudOfYourself">What are you proud of yourself for today?</label>
-                <textarea id="proudOfYourself" name="proudOfYourself" required></textarea>
-                <div class="invalid-feedback">Please enter a valid email address.</div>
+                <div class="form-section">
+                    <label for="madeYouSmile">What made you smile today?</label>
+                    <textarea id="madeYouSmile" name="madeYouSmile" required></textarea>
+                </div>
 
-                <label for="thoughtsReflections">Any other thoughts or reflections for today?</label>
-                <textarea id="thoughtsReflections" name="thoughtsReflections" required></textarea>
-                <div class="invalid-feedback">Please enter a valid email address.</div>
+                <div class="form-section">
+                    <label for="lookingForwardTo">What are you looking forward to?</label>
+                    <textarea id="lookingForwardTo" name="lookingForwardTo" required></textarea>
+                </div>
 
-                <button type="submit">Submit</button>
+                <div class="form-section">
+                    <label for="proudOfYourself">What are you proud of yourself for today?</label>
+                    <textarea id="proudOfYourself" name="proudOfYourself" required></textarea>
+                </div>
+
+                <div class="form-section">
+                    <label for="thoughtsReflections">Any other thoughts or reflections for today?</label>
+                    <textarea id="thoughtsReflections" name="thoughtsReflections" required></textarea>
+                </div>
+
+                <button class="submit-button" type="submit">Submit</button>
             </form>
         </main>
 

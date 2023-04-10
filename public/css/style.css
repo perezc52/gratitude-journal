@@ -1,9 +1,21 @@
 body {
-    /* font-family: 'Caveat', cursive;
-    font-family: 'Indie Flower', cursive;
-    font-family: 'Kalam', cursive; */
-    font-family: 'Patrick Hand', cursive;
-    background: #e9edc9;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+    background: #8ecae6;
+    width: 75%;
+    margin: 0 auto;
+}
+
+header {
+    margin: 40px;
+}
+
+p {
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 16px;
 }
 
 li {
@@ -16,4 +28,49 @@ li {
     margin: 0 auto;
     margin-bottom: 0.5cm;
     box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+    background-image: url("../imgs/paper.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.35rem;
+  }
+
+form {
+    display: flex;
+}
+
+.form-section {
+    margin: 15px 0;
+    padding: 10px;
+}
+
+.form-section > * {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 75px;
+    width: 80%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 5px;
+}
+
+.submit-button {
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 767px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, auto);
+        gap: 10px;
+    }
   }
