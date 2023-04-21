@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require('moment');
 
 const journalEntrySchema = new mongoose.Schema({
   user: {
@@ -36,8 +37,8 @@ const journalEntrySchema = new mongoose.Schema({
     required: true
   },
   createdOn: {
-    type: Date,
-    default: Date.now
+    type: String,
+    default: moment().startOf('day').format('MMMM D, YYYY')
   },
 });
 

@@ -22,11 +22,12 @@ module.exports = {
         res.redirect("/entry")
     },
     getEntryPage: async (req, res) => {
-        const today = new Date();
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        const dateString = today.toLocaleDateString('en-US', options);
-        const greeting = `Today is ${dateString}`;
+        const today = moment().startOf('day').format('MMMM D, YYYY');
+        // const todaysEntryExists = await Entry.exists({ user: req.user.id, createdOn: today });
+        const todaysEntryExists = false
+        const greeting = `Today is ${today}`;
+        const messages = req.flash();
         const moods = ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Angry']
-        res.render("entry.ejs", { greeting, moods, messages: req.flash() })
+        res.render("entry.ejs", { greeting, moods, messages, todaysEntryExists })
     }
 }
