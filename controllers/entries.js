@@ -1,5 +1,6 @@
 const Entry = require("../models/Entry");
 const entrySchema = require('../config/validator');
+const moment = require('moment');
 
 module.exports = {
     createEntry: async (req, res) => {
@@ -17,6 +18,7 @@ module.exports = {
                 console.log(e)
             } 
         }
+        req.flash('success', 'Form submitted successfully!');
         res.redirect("/entry")
     },
     getEntryPage: async (req, res) => {
@@ -25,6 +27,6 @@ module.exports = {
         const dateString = today.toLocaleDateString('en-US', options);
         const greeting = `Today is ${dateString}`;
         const moods = ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Angry']
-        res.render("entry.ejs", { greeting, moods })
+        res.render("entry.ejs", { greeting, moods, messages: req.flash() })
     }
 }
