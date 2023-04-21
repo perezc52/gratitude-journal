@@ -2,8 +2,48 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.25rem;
     background: #8ecae6;
+}
+
+.main-container {
+    display: flex;
+    width: 100%;
+    margin: 0 0 0 0;
+}
+
+.main-container main {
     width: 75%;
-    margin: 0 auto;
+    margin: 0 65px;
+}
+
+.main-container nav {
+    width: 25%;
+    background-color: #003566;
+    color: white;
+}
+
+nav ul {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+}
+
+nav ul li {
+    display: block;
+    text-align: center;
+}
+
+nav ul a {
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #457b9d;
+    color: white;
 }
 
 header {
@@ -40,18 +80,18 @@ form {
 }
 
 .form-section {
-    margin: 15px 0;
+    margin: 10px 0;
     padding: 10px;
 }
 
 .form-section > * {
     display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 textarea {
-    height: 75px;
+    height: 120px;
     width: 80%;
 }
 

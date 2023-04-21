@@ -1,21 +1,22 @@
 <%- include('partials/header') -%>
-    <div class="container">
-
-        <!-- Header -->
-        <header class="text-center">
-            <h1>Welcome to Gratitude Journal</h1>
-            <p><%= greeting %></p>
-        </header>
+    <div class="main-container">
 
         <!-- Navigation Links -->
         <nav>
-            <ul class="d-flex justify-content-center">
-                <li class="mx-2"><a href="/logout">Logout</a></li>
-                <li class="mx-2"><a href="/calendar">Calendar</a></li>
+            <ul>
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="/calendar">Calendar</a></li>
+                <li><a href="/about">About</a></li>
             </ul>
         </nav>
 
         <main>
+
+            <!-- Header -->
+            <header class="text-center">
+                <h1>Welcome to Gratitude Journal</h1>
+                <p><%= greeting %></p>
+            </header>
 
             <!-- Form Header -->
             <h2>Today's Gratitude Journal Entry</h2>
