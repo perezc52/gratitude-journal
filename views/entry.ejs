@@ -14,12 +14,9 @@
 
             <!-- Header -->
             <header class="text-center">
-                <h1>Welcome to Gratitude Journal</h1>
-                <p><%= greeting %></p>
+                <h1><%= greeting %></h1>
+                <p><%= dateGreeting %></p>
             </header>
-
-            <!-- Form Header -->
-            <h2>Today's Gratitude Journal Entry</h2>
 
             <!-- Alert Message -->
             <% if(messages.success) { %>
@@ -33,6 +30,8 @@
             <% if(todaysEntryExists) { %>
                 <h1>Today's entry has already been made</h1>
             <% }else { %>
+                <h2>Let's write today's entry...</h2>
+
                 <form class="page p-5" action="/entry" method="POST">
                     <div class="form-section">
                         <label for="goodThing">What's one good thing that happened today?</label>
