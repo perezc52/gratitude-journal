@@ -13,7 +13,7 @@ router.get("/", homeController.getIndex);
 router.post("/entry",entriesController.createEntry);
 router.get("/entry", ensureAuth, entriesController.getEntryPage);
 router.get("/about", ensureAuth, entriesController.getAboutPage);
-router.get("/calendar", ensureAuth, entriesController.getCalendarPage);
+router.get("/logs", ensureAuth, entriesController.getLogsPage);
 
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);

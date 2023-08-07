@@ -42,7 +42,7 @@ module.exports = {
     getAboutPage: async (req, res) => {
         res.render("about.ejs")
     },
-    getCalendarPage: async (req, res) => {
-        res.render("calendar.ejs")
+    getLogsPage: async (req, res) => {
+        res.render("logs.ejs")
     }
 }
