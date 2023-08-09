@@ -130,9 +130,13 @@ textarea {
     padding-bottom: 40px;
 }
 
-/* Calendar */
+/* Logs */
 
-
+.log-row {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
 
 @media screen and (max-width: 767px) {
     .grid-container {

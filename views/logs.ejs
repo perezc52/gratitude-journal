@@ -10,6 +10,13 @@
     <main class="logs">
         <div class="logs-inner">
             <h2>Calendar</h2>
+            <% for(let i = 0; i < allUserEntries.length; i++) { %>
+            <div class="log-row">
+                <h2><%= allUserEntries[i].createdOn %></h2>
+                <a href="/">Edit</a>
+                <a href="/">Delete</a>
+            </div>
+            <% } %>
         </div>
     </main>
 </div>

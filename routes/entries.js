@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const entriesController = require("../controllers/entries");
-const { ensureAuth, ensureGuest } = require("../middleware/auth");
+const { ensureAuth } = require("../middleware/auth");
 
-router.post("/entry", entriesController.createEntry);
-router.get("/entry", entriesController.getEntryPage);
+router.get("/:id", ensureAuth, entriesController.getEditEntryPage);
+router.put("/:id", ensureAuth, entriesController.editEntry);
+router.delete("/:id", ensureAuth, entriesController.deleteEntry);
 
 module.exports = router;

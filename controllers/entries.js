@@ -31,6 +31,7 @@ module.exports = {
           } else {
             greeting = `Good evening, ${req.user.userName}!`
           }
+          //below is trying to fix the bug where the flash message shows up wrong
         // const todaysEntryExists = await Entry.exists({ user: req.user.id, createdOn: today });
         console.log(req.user)
         const todaysEntryExists = false
@@ -43,6 +44,21 @@ module.exports = {
         res.render("about.ejs")
     },
     getLogsPage: async (req, res) => {
-        res.render("logs.ejs")
+        console.log(req.user)
+        try {
+            const allUserEntries = await Entry.find({user: req.user.id})
+            res.render("logs.ejs", {allUserEntries})
+        }catch(e) {
+            console.log(e)
+        }
+    },
+    deleteEntry: async (req, res) => {
+        res.json("delete")
+    },
+    editEntry: async(req, res) => {
+        res.json("edit")
+    },
+    getEditEntryPage: async (req, res,) => {
+        res.json("edit page")
     }
 }
