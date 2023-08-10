@@ -13,8 +13,8 @@
             <% for(let i = 0; i < allUserEntries.length; i++) { %>
             <div class="log-row">
                 <h2><%= allUserEntries[i].createdOn %></h2>
-                <a href="/">Edit</a>
-                <a href="/">Delete</a>
+                <a href="/entry/<%= allUserEntries[i]._id %>">Edit</a>
+                <a href="/entry/<%= allUserEntries[i]._id %>">Delete</a>
             </div>
             <% } %>
         </div>

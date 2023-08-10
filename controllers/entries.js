@@ -3,6 +3,19 @@ const entrySchema = require('../config/validator');
 const moment = require('moment');
 
 module.exports = {
+    deleteEntry: async (req, res) => {
+        res.json("delete")
+    },
+    editEntry: async(req, res) => {
+        res.json("edit")
+    },
+    getEditEntryPage: async (req, res,) => {
+        const entry = await Entry.findById(req.params._id)
+        const moods = ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Angry']
+        console.log(entry)
+        console.log(moods)
+        res.render("editEntry.ejs", {entry, moods})
+    },
     createEntry: async (req, res) => {
         console.log(req.body)
         const { error, value } = entrySchema.validate(req.body);
@@ -47,18 +60,10 @@ module.exports = {
         console.log(req.user)
         try {
             const allUserEntries = await Entry.find({user: req.user.id})
+            console.log(allUserEntries)
             res.render("logs.ejs", {allUserEntries})
         }catch(e) {
             console.log(e)
         }
     },
-    deleteEntry: async (req, res) => {
-        res.json("delete")
-    },
-    editEntry: async(req, res) => {
-        res.json("edit")
-    },
-    getEditEntryPage: async (req, res,) => {
-        res.json("edit page")
-    }
 }
