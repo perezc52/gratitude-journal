@@ -138,6 +138,27 @@ textarea {
     justify-content: space-between;
 }
 
+/* Index Page */
+.login-title {
+    margin-top: 50px;
+}
+
+.index {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.index a {
+    margin: 15px auto;
+    width: 50%;
+    text-align: center;
+}
+
+.container {
+    width: 50%;
+}
+
 @media screen and (max-width: 767px) {
     .grid-container {
         display: grid;
