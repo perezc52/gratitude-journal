@@ -10,7 +10,7 @@ module.exports = {
         res.json("edit")
     },
     getEditEntryPage: async (req, res,) => {
-        const entry = await Entry.findById(req.params._id)
+        const entry = await Entry.findById(req.params.id)
         const moods = ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Angry']
         console.log(entry)
         console.log(moods)

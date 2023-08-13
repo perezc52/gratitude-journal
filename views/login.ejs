@@ -1,7 +1,8 @@
 <%- include('partials/header') -%>
 
-<main class="container">
-  <div class="row justify-content-center">
+<main class="login-container">
+  <h1 class="login-title">Login or Register</h1>
+  <div class="login-form">
     <section class="col-6 mt-5">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
@@ -32,6 +33,7 @@
           />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        <span>Don't have an account? Click <a href="/signup">here!</a></span>
       </form>
     </section>
   </div>

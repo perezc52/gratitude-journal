@@ -85,6 +85,14 @@ form {
     padding: 10px;
 }
 
+.form-section label {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form-section .grid-container label {
+    font-family: 'Patrick Hand', cursive;
+}
+
 .form-section > * {
     display: block;
     margin-top: 8px;
@@ -138,6 +146,14 @@ textarea {
     justify-content: space-between;
 }
 
+.logs-inner h1 {
+    margin: 50px 0 25px 0;
+}
+
+.logs-container {
+    margin: 25px 0;
+}
+
 /* Index Page */
 .login-title {
     margin-top: 50px;
@@ -155,8 +171,66 @@ textarea {
     text-align: center;
 }
 
-.container {
+.container-index {
     width: 50%;
+    margin: 0 auto;
+}
+
+/* Edit entry page */
+
+.edit-title {
+    font-size: 3rem;
+}
+
+/* Login Page */
+.login-container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form {
+    position: relative;
+    left: 200px;
+}
+
+.login-form form * {
+    margin-bottom: 5px;
+}
+
+.login-form form button {
+    margin: 15px 0
+}
+
+.login-title {
+    text-align: center;
+}
+
+/* Signup page */
+
+.signup-container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.signup-title {
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+.signup-container .signup-form form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.signup-form form button {
+    margin: 15px 0;
 }
 
 @media screen and (max-width: 767px) {

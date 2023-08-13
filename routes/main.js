@@ -15,11 +15,14 @@ router.get("/logs", ensureAuth, entriesController.getLogsPage);
 
 router.post("/entry",entriesController.createEntry);
 
+router.put("/entry/:id", ensureAuth, entriesController.editEntry);
+
 // Login/Register routes
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/signup", authController.getSignup);
-router.post("/signup", authController.postSignup);
 router.get("/logout", authController.logout);
+
+router.post("/signup", authController.postSignup);
 
 module.exports = router;

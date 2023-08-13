@@ -3,20 +3,24 @@
     <nav>
         <ul>
             <li><a href="/logout">Logout</a></li>
+            <li><a href="/logs">Logs</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/entry">Entry</a></li>
         </ul>
     </nav>
     <main class="logs">
         <div class="logs-inner">
-            <h2>Calendar</h2>
-            <% for(let i = 0; i < allUserEntries.length; i++) { %>
-            <div class="log-row">
-                <h2><%= allUserEntries[i].createdOn %></h2>
-                <a href="/entry/<%= allUserEntries[i]._id %>">Edit</a>
-                <a href="/entry/<%= allUserEntries[i]._id %>">Delete</a>
+            <h1>All your past entries</h1>
+            <hr>
+            <div class="logs-container">
+                <% for(let i = 0; i < allUserEntries.length; i++) { %>
+                <div class="log-row">
+                    <h2><%= allUserEntries[i].createdOn %></h2>
+                    <a href="/entry/<%= allUserEntries[i]._id %>">Edit</a>
+                    <a href="/entry/<%= allUserEntries[i]._id %>">Delete</a>
+                </div>
+                <% } %>
             </div>
-            <% } %>
         </div>
     </main>
 </div>
