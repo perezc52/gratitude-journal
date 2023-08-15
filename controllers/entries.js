@@ -10,11 +10,15 @@ module.exports = {
         res.json("edit")
     },
     getEditEntryPage: async (req, res,) => {
-        const entry = await Entry.findById(req.params.id)
-        const moods = ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Angry']
-        console.log(entry)
-        console.log(moods)
-        res.render("editEntry.ejs", {entry, moods})
+        try {
+            const entry = await Entry.findById(req.params.id)
+            const moods = ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Angry']
+            console.log(entry)
+            console.log(moods)
+            res.render("editEntry.ejs", {entry, moods})
+        }catch(e) {
+            console.log(e)
+        }
     },
     createEntry: async (req, res) => {
         console.log(req.body)
@@ -27,31 +31,34 @@ module.exports = {
                     user: req.user.id,
                     ...value,
                 })
+                req.flash('formSuccess', 'Form submitted successfully!');
+                res.redirect("/entry")
             }catch(e) {
                 console.log(e)
             } 
         }
-        req.flash('success', 'Form submitted successfully!');
-        res.redirect("/entry")
     },
     getEntryPage: async (req, res) => {
-        const today = moment().startOf('day').format('MMMM D, YYYY');
-        const currentHour = moment().hours();
-        if (currentHour < 12) {
-            greeting = `Good morning, ${req.user.userName}!`
-          } else if (currentHour < 18) {
-            greeting = `Good afternoon, ${req.user.userName}!`
-          } else {
-            greeting = `Good evening, ${req.user.userName}!`
-          }
-          //below is trying to fix the bug where the flash message shows up wrong
-        // const todaysEntryExists = await Entry.exists({ user: req.user.id, createdOn: today });
-        console.log(req.user)
-        const todaysEntryExists = false
-        const dateGreeting = `Today is ${today}`;
-        const messages = req.flash();
-        const moods = ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Angry']
-        res.render("entry.ejs", { greeting, dateGreeting, moods, messages, todaysEntryExists })
+        try {
+            const today = moment().startOf('day').format('MMMM D, YYYY');
+            const currentHour = moment().hours();
+            if (currentHour < 12) {
+                greeting = `Good morning, ${req.user.userName}!`
+              } else if (currentHour < 18) {
+                greeting = `Good afternoon, ${req.user.userName}!`
+              } else {
+                greeting = `Good evening, ${req.user.userName}!`
+              }
+              //below is trying to fix the bug where the flash message shows up wrong
+            const todaysEntryExists = await Entry.exists({ user: req.user.id, createdOn: today });
+            console.log(todaysEntryExists)
+            const dateGreeting = `Today is ${today}`;
+            const messages = req.flash('formSuccess');
+            const moods = ['Happy', 'Grateful', 'Excited', 'Content', 'Calm', 'Focused', 'Tired', 'Stressed', 'Overwhelmed', 'Sad', 'Anxious', 'Angry']
+            res.render("entry.ejs", { greeting, dateGreeting, moods, messages, todaysEntryExists })
+        }catch(e) {
+            console.log(e)
+        }
     },
     getAboutPage: async (req, res) => {
         res.render("about.ejs")

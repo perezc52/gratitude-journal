@@ -20,16 +20,16 @@
             </header>
 
             <!-- Alert Message -->
-            <% if(messages.success) { %>
+            <% if(messages.formSuccess) { %>
                 <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                    <%= messages.success %>
+                    <%= messages.formSuccess %>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <% } %>
 
             <!-- Form -->
             <% if(todaysEntryExists) { %>
-                <h1>Today's entry has already been made</h1>
+                <h1 class="text-center mt-5">You've written your entry for today! 🥳</h1>
             <% }else { %>
                 <h2>Let's write today's entry...</h2>
 
