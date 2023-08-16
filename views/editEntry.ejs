@@ -20,7 +20,7 @@
 
             <!-- Form -->
 
-                <form class="page p-5" action="/entry" method="POST">
+                <form class="page p-5" action="/entry/<%= entry._id %>?_method=PUT" method="POST">
                     <div class="form-section">
                         <label for="goodThing">What's one good thing that happened today?</label>
                         <textarea id="goodThing" name="goodThing" required><%= entry.goodThing %>

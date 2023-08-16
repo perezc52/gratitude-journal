@@ -4,10 +4,22 @@ const moment = require('moment');
 
 module.exports = {
     deleteEntry: async (req, res) => {
-        res.json("delete")
+        try {
+            await Entry.findByIdAndDelete(req.params.id)
+            const response = { message: 'Entry deleted successfully' };
+            res.json(response);
+        } catch(e) {
+            console.log(e)
+        }
     },
     editEntry: async(req, res) => {
-        res.json("edit")
+        try {
+            const updatedData = req.body
+            await Entry.findByIdAndUpdate(req.params.id, updatedData);
+            res.redirect('/entry')
+        } catch(e) {
+            console.log(e)
+        }
     },
     getEditEntryPage: async (req, res,) => {
         try {

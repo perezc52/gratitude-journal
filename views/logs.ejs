@@ -17,7 +17,7 @@
                 <div class="log-row">
                     <h2><%= allUserEntries[i].createdOn %></h2>
                     <a href="/entry/<%= allUserEntries[i]._id %>">Edit</a>
-                    <a href="/entry/<%= allUserEntries[i]._id %>">Delete</a>
+                    <a class="delete-entry" data-entry-id="<%= allUserEntries[i]._id %>" href="/entry/<%= allUserEntries[i]._id %>">Delete</a>
                 </div>
                 <% } %>
             </div>

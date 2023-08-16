@@ -17,6 +17,8 @@ router.post("/entry",entriesController.createEntry);
 
 router.put("/entry/:id", ensureAuth, entriesController.editEntry);
 
+router.delete("/entry/:id", ensureAuth, entriesController.deleteEntry)
+
 // Login/Register routes
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
