@@ -143,15 +143,26 @@ textarea {
 .log-row {
     width: 50%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 13px;
 }
 
-.logs-inner h1 {
-    margin: 50px 0 25px 0;
+.log-row h2 {
+    margin: 0;
+}
+
+.logs h1 {
+    margin: 40px 0 25px 0;
 }
 
 .logs-container {
     margin: 25px 0;
+}
+
+.view-entry-link {
+    color: #003566;
+    text-decoration: none;
 }
 
 /* Index Page */
@@ -231,6 +242,11 @@ textarea {
 
 .signup-form form button {
     margin: 15px 0;
+}
+
+/* View only page */
+textarea[readonly]:focus {
+    outline: none;
 }
 
 @media screen and (max-width: 767px) {
