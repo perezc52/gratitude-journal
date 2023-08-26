@@ -4,7 +4,6 @@ const authController = require("../controllers/auth");
 const homeController = require("../controllers/home");
 const entriesController = require("../controllers/entries");
 const { ensureAuth } = require("../middleware/auth");
-// const { sanitizeHTML } = require("../middleware/sanitize");
 
 router.get("/", homeController.getIndex);
 
