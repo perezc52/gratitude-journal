@@ -1,8 +1,8 @@
-# QGratitude Journal
+# Gratitude Journal
 This is a web app where users can sign up and make daily journal entries
 
 ![](public/imgs/01.jpg)
-![Live Demo](https://gratitude-journal-la8p.onrender.com/)
+[Live Demo](https://gratitude-journal-la8p.onrender.com/)
 
 ## How It's Made:
 
